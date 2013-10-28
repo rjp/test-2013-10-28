@@ -32,10 +32,6 @@ Scenario: Flush
     Given I have "2H 4H 5H 8H 9H"
     Then my ranking is "Flush" with value 9
 
-Scenario: Flush over Straight
-    Given I have "2H 3H 4H 5H 6H"
-    Then my ranking is "Flush" with value 6
-
 Scenario: Full House
     Given I have "AH AD AC 2S 2H"
     Then my ranking is "Full House" with value A,2
