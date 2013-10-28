@@ -7,3 +7,7 @@ Scenario: High card
 Scenario: High card
     Given I have "AH 2S 3D 4C 5H"
     Then my ranking is "High Card" with value A
+
+Scenario: Pair
+    Given I have "AH AD 2S 3D 4C"
+    Then my ranking is "Pair" with value A
