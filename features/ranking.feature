@@ -20,10 +20,6 @@ Scenario: Three Of A Kind
     Given I have "AH AD AC 2S 3S"
     Then my ranking is "Three Of A Kind" with value A
 
-Scenario: Three Of A Kind over Pair
-    Given I have "AH AD AC 2S 2H"
-    Then my ranking is "Three Of A Kind" with value A
-
 Scenario: Simple straight
     Given I have "2H 3H 4S 5C 6D"
     Then my ranking is "Straight" with value 6
@@ -39,3 +35,7 @@ Scenario: Flush
 Scenario: Flush over Straight
     Given I have "2H 3H 4H 5H 6H"
     Then my ranking is "Flush" with value 6
+
+Scenario: Full House
+    Given I have "AH AD AC 2S 2H"
+    Then my ranking is "Full House" with value A,2
