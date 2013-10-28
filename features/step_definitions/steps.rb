@@ -11,5 +11,5 @@ Then /^my ranking is "(.+?)"/ do |rank|
 end
 
 And /^my value is (.+)/ do |value|
-    @hand.value.join(',').should eq(value)
+    [@hand.value].to_a.join(',').should eq(value)
 end
