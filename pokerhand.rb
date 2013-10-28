@@ -1,8 +1,9 @@
 require 'pokercard'
 
-
 class PokerHand
     attr_accessor :cards, :sorted_cards, :by_suit, :by_value, :rank, :value
+    @@ranks = ['High Card', 'Pair', 'Two Pair', 'Three Of A Kind',
+    'Straight', 'Flush', 'Full House', 'Four Of A Kind', 'Straight Flush']
 
     def initialize(cards)
         @cards = cards
@@ -20,6 +21,8 @@ class PokerHand
 
         # Calculate the rank once we've created ourselves, saves effort
         @rank, @value = self.calculate_rank
+
+        # We should never see this in normal operation
         @value ||= [1,2,3,4,5]
     end
 
@@ -75,5 +78,34 @@ class PokerHand
         end
 
         return 'High Card', v_values
+    end
+
+    def better(other)
+        my_rank = @@ranks.find_index(@rank)
+        their_rank = @@ranks.find_index(other.rank)
+
+        # Better hand => better
+        if my_rank > their_rank then
+            return true
+        end
+
+        # Worse hand => not better
+        if my_rank < their_rank then
+            return false
+        end
+
+        # Same hand => compare values
+        @value.zip(other.value).each do |me, them|
+            # If my card beats theirs, I win
+            if me > them then
+                return true
+            end
+            # If their card beats mine, they win
+            if them > me then
+                return false
+            end
+        end
+
+        return false
     end
 end
