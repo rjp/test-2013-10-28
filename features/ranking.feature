@@ -31,3 +31,11 @@ Scenario: Simple straight
 Scenario: Jumbled straight
     Given I have "QH AH TS JC KD"
     Then my ranking is "Straight" with value A
+
+Scenario: Flush
+    Given I have "2H 4H 5H 8H 9H"
+    Then my ranking is "Flush" with value 9
+
+Scenario: Flush over Straight
+    Given I have "2H 3H 4H 5H 6H"
+    Then my ranking is "Flush" with value 6
