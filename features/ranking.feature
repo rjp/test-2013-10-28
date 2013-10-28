@@ -1,7 +1,7 @@
 Feature: Ranking
 
 Scenario: High card
-    Given I have "2H 3S 4D 5C 6H"
+    Given I have "2H 3S 4D 5C 8H"
     Then my ranking is "High Card"
     And my value is 6
  
