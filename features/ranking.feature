@@ -12,7 +12,6 @@ Scenario: Pair
     Given I have "AH AD 2S 3D 4C"
     Then my ranking is "Pair" with value A
 
-# Two Pair (3,2) > High Card (A)
 Scenario: Two Pairs
     Given I have "3H 3D 2S 2D AC"
     Then my ranking is "Two Pair" with value 3,2
@@ -21,8 +20,7 @@ Scenario: Three Of A Kind
     Given I have "AH AD AC 2S 3S"
     Then my ranking is "Three Of A Kind" with value A
 
-# Three (A) > Pair (2)
-Scenario: Three Of A Kind
+Scenario: Three Of A Kind over Pair
     Given I have "AH AD AC 2S 2H"
     Then my ranking is "Three Of A Kind" with value A
 
