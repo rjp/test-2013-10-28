@@ -39,3 +39,11 @@ Scenario: Flush over Straight
 Scenario: Full House
     Given I have "AH AD AC 2S 2H"
     Then my ranking is "Full House" with value A,2
+
+Scenario: Four Of A Kind
+    Given I have "AH AD AC AS 2H"
+    Then my ranking is "Four Of A Kind" with value A
+
+Scenario: Jumbled Four Of A Kind
+    Given I have "AH 2D AC AS AD"
+    Then my ranking is "Four Of A Kind" with value A
