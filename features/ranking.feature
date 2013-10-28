@@ -25,3 +25,11 @@ Scenario: Three Of A Kind
 Scenario: Three Of A Kind
     Given I have "AH AD AC 2S 2H"
     Then my ranking is "Three Of A Kind" with value A
+
+Scenario: Simple straight
+    Given I have "2H 3H 4S 5C 6D"
+    Then my ranking is "Straight" with value 6
+
+Scenario: Jumbled straight
+    Given I have "QH AH TS JC KD"
+    Then my ranking is "Straight" with value A
