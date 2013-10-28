@@ -47,3 +47,15 @@ Scenario: Four Of A Kind
 Scenario: Jumbled Four Of A Kind
     Given I have "AH 2D AC AS AD"
     Then my ranking is "Four Of A Kind" with value A
+
+Scenario: Straight Flush
+    Given I have "2H 3H 4H 5H 6H"
+    Then my ranking is "Straight Flush" with value 6
+
+Scenario: Reverse Straight Flush
+    Given I have "6H 5H 4H 3H 2H"
+    Then my ranking is "Straight Flush" with value 6
+
+Scenario: Jumbled Straight Flush
+    Given I have "2H 6H 4H 5H 3H"
+    Then my ranking is "Straight Flush" with value 6
