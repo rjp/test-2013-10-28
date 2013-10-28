@@ -11,3 +11,8 @@ Scenario: High card
 Scenario: Pair
     Given I have "AH AD 2S 3D 4C"
     Then my ranking is "Pair" with value A
+
+Scenario: Two Pairs
+    Given I have "AH AD 2S 2D 4C"
+    Then my ranking is "Two Pair" with value A,2
+
