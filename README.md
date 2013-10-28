@@ -1,3 +1,9 @@
+# Test running
+
+    RUBYOPT=-I$(pwd) cucumber
+
+(There must be a better way of structuring things to avoid the RUBYOPT faff.)
+
 # Problem description
 
 The challenge is to write some Ruby code that satisfies the following requirements
